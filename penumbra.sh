@@ -7,7 +7,10 @@ wget https://github.com/penumbra-zone/penumbra/releases/download/v0.64.1/pcli-x8
 tar -xvf pcli-x86_64-unknown-linux-gnu.tar.xz && mv pcli-x86_64-unknown-linux-gnu penumbra
 
 # Clean up
-rm pcli-x86_64-unknown-linux-gnu.tar.xz && cd penumbra
+rm pcli-x86_64-unknown-linux-gnu.tar.xz
+
+# Changing directory
+cd penumbra
 
 # Initialize and generate keys
 ./pcli init soft-kms generate
