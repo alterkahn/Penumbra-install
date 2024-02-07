@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Download Penumbra CLI
-wget https://github.com/penumbra-zone/penumbra/releases/download/v0.64.2/pcli-x86_64-unknown-linux-gnu.tar.xz
+wget https://github.com/penumbra-zone/penumbra/releases/download/v0.65.0/pcli-x86_64-unknown-linux-gnu.tar.xz
 
 # Extract and rename
 tar -xvf pcli-x86_64-unknown-linux-gnu.tar.xz && mv pcli-x86_64-unknown-linux-gnu penumbra
