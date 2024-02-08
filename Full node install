@@ -41,6 +41,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable pd
 sudo systemctl start pd
 
+# Download the testnet files
+pd testnet join --external-address 95.217.217.100:26656 --moniker alterkahn
+
 # Start cometbft in a new tmux session
 tmux new -s cometbft
 cometbft start --home ~/.penumbra/testnet_data/node0/cometbft
