@@ -14,7 +14,7 @@ sudo tar -xvf pcli-x86_64-unknown-linux-gnu.tar.xz
 sudo tar -xvf pd-x86_64-unknown-linux-gnu.tar.xz
 
 # Move binaries to /usr/bin
-sudo mv cometbft_0.37.2_linux_amd64/cometbft /usr/bin
+sudo mv cometbft /usr/bin
 sudo mv pcli-x86_64-unknown-linux-gnu/pcli /usr/bin
 sudo mv pd-x86_64-unknown-linux-gnu/pd /usr/bin
 
