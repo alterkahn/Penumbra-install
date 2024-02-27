@@ -86,4 +86,4 @@ pcli validator identity
 pcli view balance
 
 # Delegate to ypur validator
-pcli tx delegate 100penumbra --to [YOUR_VALIDATOR_IDENTITY_KEY]
+pcli tx delegate 100penumbra --to penumbravalid16t8tc3pem9w9vycevsf0c4vyaeewmcumcvvcyc0acmc668tcfgyssvgeca
