@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Perform system upgrades
-sudo apt update && sudo apt install build-essential git curl jq tree htop wget ncdu pkg-config libssl-dev git-lfs clang tmux plocate -y
+# Perform system upgrades if needed and install dependencies "sudo apt update && sudo apt upgrade -y && sudo apt install build-essential git curl jq tree htop wget ncdu pkg-config libssl-dev git-lfs clang tmux plocate -y" 
 
 # Download necessary files
 wget https://github.com/penumbra-zone/penumbra/releases/download/v0.68.0/pd-x86_64-unknown-linux-gnu.tar.xz
@@ -23,7 +22,7 @@ rm CHANGELOG.md cometbft_0.37.2_linux_amd64.tar.gz LICENSE pcli-x86_64-unknown-l
 rm -rf pcli-x86_64-unknown-linux-gnu pd-x86_64-unknown-linux-gnu
 
 # Download the testnet files
-pd testnet join --external-address 167.235.52.194:26656 --moniker podsos
+pd testnet join --external-address 95.217.217.100:26656 --moniker alterkahn
 
 # Create and configure systemd service for pd
 printf "[Unit]
@@ -32,7 +31,7 @@ After=network-online.target
 
 [Service]
 User=root
-ExecStart=`which pd` start --home ~/.penumbra/testnet_data/node0/pd
+ExecStart=`which pd` start --home /root/.penumbra/testnet_data/node0/pd
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
