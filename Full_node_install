@@ -25,6 +25,7 @@ rm -rf pcli-x86_64-unknown-linux-gnu pd-x86_64-unknown-linux-gnu
 pd testnet join --external-address 95.217.217.100:26656 --moniker alterkahn
 
 # Create and configure systemd service for pd
+
 printf "[Unit]
 Description=pd node
 After=network-online.target
