@@ -38,7 +38,7 @@ RestartSec=3
 LimitNOFILE=65535
 
 [Install]
-WantedBy=multi-user.target" | sudo tee /etc/systemd/system/pd.service > /dev/null
+WantedBy=multi-user.target" > /etc/systemd/system/pd.service
 
 # Create and configure systemd service for cometbft
 
