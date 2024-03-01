@@ -8,6 +8,7 @@ tar -xvf pcli-x86_64-unknown-linux-gnu.tar.xz && mv pcli-x86_64-unknown-linux-gn
 
 # Clean up
 rm pcli-x86_64-unknown-linux-gnu.tar.xz
+rm -r pcli-x86_64-unknown-linux-gnu
 
 # Initialize and generate keys
 pcli init soft-kms generate
