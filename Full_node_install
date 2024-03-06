@@ -67,3 +67,7 @@ sudo systemctl start cometbft
 # Check if you're syncing
 
 curl -s http://localhost:26657/status | jq .result.sync_info.catching_up
+
+# Check if you have peers
+
+curl -s http://localhost:26657/net_info | jq '.result.n_peers' -r
