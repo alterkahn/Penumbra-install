@@ -73,6 +73,10 @@ nano validator.toml
 # Check sync status
 curl -s http://localhost:26657/status | jq .result.sync_info.catching_up
 
+# Check if you have peers
+
+curl -s http://localhost:26657/net_info | jq '.result.n_peers' -r
+
 # When the chain is synced, run your validator by uploading validator definition file
 pcli validator definition upload --file validator.toml
 
