@@ -63,4 +63,7 @@ sudo systemctl enable pd
 sudo systemctl enable cometbft
 sudo systemctl start pd
 sudo systemctl start cometbft
-sudo journalctl -u cometbft -fo cat
+
+# Check if you're syncing
+
+curl -s http://localhost:26657/status | jq .result.sync_info.catching_up
