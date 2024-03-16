@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Perform system upgrades if needed and install dependencies "sudo apt update && sudo apt upgrade -y && sudo apt install build-essential git curl jq tree htop wget ncdu pkg-config libssl-dev git-lfs clang tmux plocate -y" 
+# Perform system upgrades if needed and install dependencies 
+sudo apt update && sudo apt upgrade -y && sudo apt install build-essential git curl jq tree htop wget ncdu pkg-config libssl-dev git-lfs clang tmux plocate -y 
 
 # Download necessary files
 wget https://github.com/penumbra-zone/penumbra/releases/download/v0.68.2/pd-x86_64-unknown-linux-gnu.tar.xz
@@ -21,11 +22,13 @@ sudo mv pd-x86_64-unknown-linux-gnu/pd /usr/bin
 rm CHANGELOG.md cometbft_0.37.2_linux_amd64.tar.gz LICENSE pcli-x86_64-unknown-linux-gnu.tar.xz pd-x86_64-unknown-linux-gnu.tar.xz README.md SECURITY.md UPGRADING.md
 rm -rf pcli-x86_64-unknown-linux-gnu pd-x86_64-unknown-linux-gnu
 
-# Prompt user for IP address and moniker
-read -p "Enter your IP address: " ip_address
+# Prompt the user for IP address
+read -p "Enter the IP address: " ip_address
+
+# Prompt the user for moniker
 read -p "Enter your moniker: " moniker
 
-# Download the testnet files
+# Download the testnet files and join
 pd testnet join --external-address "$ip_address":26656 --moniker "$moniker"
 
 # Create and configure systemd service for pd
