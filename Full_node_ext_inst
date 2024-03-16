@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Perform system upgrades if needed and install dependencies 
-sudo apt update && sudo apt upgrade -y && sudo apt install build-essential git curl jq tree htop wget ncdu pkg-config libssl-dev git-lfs clang tmux plocate -y 
-
 # Download necessary files
 wget https://github.com/penumbra-zone/penumbra/releases/download/v0.68.2/pd-x86_64-unknown-linux-gnu.tar.xz
 wget https://github.com/penumbra-zone/penumbra/releases/download/v0.68.2/pcli-x86_64-unknown-linux-gnu.tar.xz
