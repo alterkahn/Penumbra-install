@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Download necessary files
-wget https://github.com/penumbra-zone/penumbra/releases/download/v0.68.2/pd-x86_64-unknown-linux-gnu.tar.xz
-wget https://github.com/penumbra-zone/penumbra/releases/download/v0.68.2/pcli-x86_64-unknown-linux-gnu.tar.xz
+wget https://github.com/penumbra-zone/penumbra/releases/download/v0.69.1/pd-x86_64-unknown-linux-gnu.tar.xz
+wget https://github.com/penumbra-zone/penumbra/releases/download/v0.69.1/pcli-x86_64-unknown-linux-gnu.tar.xz
 wget https://github.com/cometbft/cometbft/releases/download/v0.37.2/cometbft_0.37.2_linux_amd64.tar.gz
 
 # Extract downloaded files
@@ -19,17 +19,21 @@ sudo mv pd-x86_64-unknown-linux-gnu/pd /usr/bin
 rm CHANGELOG.md cometbft_0.37.2_linux_amd64.tar.gz LICENSE pcli-x86_64-unknown-linux-gnu.tar.xz pd-x86_64-unknown-linux-gnu.tar.xz README.md SECURITY.md UPGRADING.md
 rm -rf pcli-x86_64-unknown-linux-gnu pd-x86_64-unknown-linux-gnu
 
-# Prompt the user for IP address
-read -p "Enter the IP address: " IP
+# Prompt the user for IP address and validate input
+while true; do
+    read -p "Enter the IP address: " ip_address
+    if [[ $ip_address =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        break
+    else
+        echo "Invalid IP address format. Please enter a valid IP address."
+    fi
+done
 
 # Prompt the user for moniker
 read -p "Enter your moniker: " moniker
 
-# Debugging: Print the IP address
-echo "IP Address: $ip_address"
-
 # Download the testnet files and join
-pd testnet join --external-address "$IP:26656" --moniker "$moniker"
+pd testnet join --external-address "$ip_address:26656" --moniker "$moniker"
 
 # Create and configure systemd service for pd
 printf "[Unit]
@@ -61,7 +65,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/cometbft.service
 
-# Start pd and cometbft services and check cometbft logs
+# Start pd and cometbft services
 sudo systemctl daemon-reload
 sudo systemctl enable pd
 sudo systemctl enable cometbft
