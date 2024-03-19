@@ -20,13 +20,13 @@ rm CHANGELOG.md cometbft_0.37.2_linux_amd64.tar.gz LICENSE pcli-x86_64-unknown-l
 rm -rf pcli-x86_64-unknown-linux-gnu pd-x86_64-unknown-linux-gnu
 
 # Prompt user to input IP address and Moniker
-echo "Enter your IP address (external):"
+echo "Enter your IP address:"
 read ip_address
 
 echo "Enter your Moniker:"
 read moniker
 
-# Переконайтеся, що значення змінних правильно ініціалізується
+# Make sure that the value of the variables is initialized correctly
 echo "IP address: $ip_address"
 echo "Moniker: $moniker"
 
