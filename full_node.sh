@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Download necessary files
-wget https://github.com/penumbra-zone/penumbra/releases/download/v0.69.1/pd-x86_64-unknown-linux-gnu.tar.xz
-wget https://github.com/penumbra-zone/penumbra/releases/download/v0.69.1/pcli-x86_64-unknown-linux-gnu.tar.xz
-wget https://github.com/cometbft/cometbft/releases/download/v0.37.2/cometbft_0.37.2_linux_amd64.tar.gz
+wget https://github.com/penumbra-zone/penumbra/releases/download/v0.70.0/pd-x86_64-unknown-linux-gnu.tar.xz
+wget https://github.com/penumbra-zone/penumbra/releases/download/v0.70.0/pcli-x86_64-unknown-linux-gnu.tar.xz
+wget https://github.com/cometbft/cometbft/releases/download/v0.37.5/cometbft_0.37.2_linux_amd64.tar.gz
 
 # Extract downloaded files
-sudo tar -xvf cometbft_0.37.2_linux_amd64.tar.gz
+sudo tar -xvf cometbft_0.37.5_linux_amd64.tar.gz
 sudo tar -xvf pcli-x86_64-unknown-linux-gnu.tar.xz
 sudo tar -xvf pd-x86_64-unknown-linux-gnu.tar.xz
 
@@ -16,7 +16,7 @@ sudo mv pcli-x86_64-unknown-linux-gnu/pcli /usr/bin
 sudo mv pd-x86_64-unknown-linux-gnu/pd /usr/bin
 
 # Clean up unnecessary files
-rm CHANGELOG.md cometbft_0.37.2_linux_amd64.tar.gz LICENSE pcli-x86_64-unknown-linux-gnu.tar.xz pd-x86_64-unknown-linux-gnu.tar.xz README.md SECURITY.md UPGRADING.md
+rm CHANGELOG.md cometbft_0.37.5_linux_amd64.tar.gz LICENSE pcli-x86_64-unknown-linux-gnu.tar.xz pd-x86_64-unknown-linux-gnu.tar.xz README.md SECURITY.md UPGRADING.md
 rm -rf pcli-x86_64-unknown-linux-gnu pd-x86_64-unknown-linux-gnu
 
 # Prompt user to input IP address and Moniker
