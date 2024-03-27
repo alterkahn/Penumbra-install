@@ -3,15 +3,6 @@
 
 echo "
 
-
-
-
-
-
-
-
-
-
       :::::::::       ::::::::::       ::::    :::      :::    :::         :::   :::       :::::::::       :::::::::           :::
      :+:    :+:      :+:              :+:+:   :+:      :+:    :+:        :+:+: :+:+:      :+:    :+:      :+:    :+:        :+: :+:
     +:+    +:+      +:+              :+:+:+  +:+      +:+    +:+       +:+ +:+:+ +:+     +:+    +:+      +:+    +:+       +:+   +:+
@@ -20,24 +11,12 @@ echo "
  #+#             #+#              #+#   #+#+#      #+#    #+#       #+#       #+#     #+#    #+#      #+#    #+#      #+#     #+#
 ###             ##########       ###    ####       ########        ###       ###     #########       ###    ###      ###     ###
 
-
-
-
-
-
-
-
-
-
-
-
-
 "
 
 # Download necessary files
 wget https://github.com/penumbra-zone/penumbra/releases/download/v0.70.0/pd-x86_64-unknown-linux-gnu.tar.xz
 wget https://github.com/penumbra-zone/penumbra/releases/download/v0.70.0/pcli-x86_64-unknown-linux-gnu.tar.xz
-wget https://github.com/cometbft/cometbft/releases/download/v0.37.5/cometbft_0.37.2_linux_amd64.tar.gz
+wget https://github.com/cometbft/cometbft/releases/download/v0.37.5/cometbft_0.37.5_linux_amd64.tar.gz
 
 # Extract downloaded files
 sudo tar -xvf cometbft_0.37.5_linux_amd64.tar.gz
